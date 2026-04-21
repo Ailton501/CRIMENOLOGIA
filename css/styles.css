@@ -1,4 +1,4 @@
-/* Variables de color y tipografía */
+/* Variables de color y tipografÃ­a */
 :root {
     --primary-color: #610e05;
     --secondary-color: #566573;
@@ -23,6 +23,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    padding-top: 90px;
 }
 
 .container {
@@ -129,14 +130,23 @@ body {
 /* Portada */
 .portada-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: center;
-    height: calc(100vh - 100px);
+    grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+    grid-template-areas:
+        "titulo imagenes"
+        "participantes imagenes";
+    gap: 32px;
+    align-items: start;
+    padding-top: 40px;
 }
 
 .portada-titulo {
-    text-align: center;
+    grid-area: titulo;
+    text-align: left;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 249, 250, 0.92));
+    padding: 28px 30px;
+    border-left: 6px solid var(--primary-color);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 .portada-titulo h2 {
@@ -152,18 +162,21 @@ body {
 }
 
 .portada-imagenes {
+    grid-area: imagenes;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+    align-self: stretch;
 }
 
 .portada-imagenes img {
     width: 100%;
-    height: auto;
-    max-height: 400px;
+    height: 100%;
+    min-height: 420px;
+    max-height: 520px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
     transition: transform 0.3s;
 }
 
@@ -171,7 +184,43 @@ body {
     transform: scale(1.03);
 }
 
-/* Identificación Humana - Métodos */
+.portada-participantes {
+    grid-area: participantes;
+    background: linear-gradient(135deg, rgba(97, 14, 5, 0.96), rgba(125, 33, 23, 0.93));
+    color: white;
+    padding: 28px 30px;
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(97, 14, 5, 0.22);
+    width: 100%;
+}
+
+.portada-participantes h3 {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.participantes-texto {
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.participantes-lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+}
+
+.participantes-lista li {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+/* IdentificaciÃ³n Humana - MÃ©todos */
 .metodo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -203,7 +252,7 @@ body {
     order: 1;
 }
 
-/* Estilos para imágenes side-by-side */
+/* Estilos para imÃ¡genes side-by-side */
 .metodo-img.side-by-side {
     display: flex;
     width: 100%;
@@ -498,7 +547,7 @@ body {
     margin: 0;
 }
 
-/* Periódico Universitario - ESTILOS CORREGIDOS */
+/* PeriÃ³dico Universitario - ESTILOS CORREGIDOS */
 #libro2.section {
     min-height: auto;
     padding: 60px 0;
@@ -525,7 +574,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* Contenido adicional del periódico */
+/* Contenido adicional del periÃ³dico */
 .periodico-adicional {
     margin-top: 40px;
     padding: 40px;
@@ -777,12 +826,43 @@ body {
     }
 
     .portada-grid {
-        height: auto;
-        padding: 40px 0;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo"
+            "imagenes"
+            "participantes";
+        gap: 24px;
+        padding: 24px 0;
+    }
+
+    .portada-titulo {
+        text-align: center;
+        padding: 24px;
     }
 
     .portada-titulo h2 {
         font-size: 2rem;
+    }
+
+    .portada-imagenes {
+        grid-template-columns: 1fr;
+    }
+
+    .portada-imagenes img {
+        min-height: 260px;
+        max-height: 320px;
+    }
+
+    .portada-participantes {
+        padding: 24px;
+    }
+
+    .portada-participantes h3 {
+        font-size: 1.8rem;
+    }
+
+    .participantes-lista {
+        grid-template-columns: 1fr;
     }
 
     .metodo {
@@ -825,7 +905,7 @@ body {
         margin-left: 20px;
     }
 
-    /* Responsive para periódico */
+    /* Responsive para periÃ³dico */
     .periodico-adicional {
         padding: 25px 20px;
         margin-top: 40px;
