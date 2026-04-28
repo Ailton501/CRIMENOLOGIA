@@ -216,6 +216,40 @@ body {
     transform: scale(1.03);
 }
 
+.portada-item img:hover {
+    transform: scale(1.03);
+}
+
+.portada-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    transition: transform 0.3s;
+}
+
+.portada-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portada-item p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
 .portada-participantes {
     grid-area: participantes;
     background: linear-gradient(135deg, rgba(97, 14, 5, 0.96), rgba(125, 33, 23, 0.93));
@@ -891,6 +925,15 @@ body {
         border-radius: 16px;
     }
 
+    .portada-item img {
+    width: 100%;
+    min-height: auto;
+    height: 240px;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
     .portada-participantes {
         padding: 22px;
         text-align: center;
@@ -1005,6 +1048,10 @@ body {
     .portada-imagenes img {
         height: 200px;
     }
+
+    .portada-item img {
+    height: 200px;
+}
 
     .flip-book {
         height: 300px;
