@@ -730,6 +730,23 @@ body {
     color: var(--primary-color);
 }
 
+/* Estilos para los botones que cambian de página (sin conflicto con JS) */
+.enlace-pagina {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+.enlace-pagina:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
 /* Footer */
 .footer {
     background-color: var(--primary-color);
@@ -861,7 +878,7 @@ body {
         width: 100%;
     }
 
-    .nav-link {
+    .nav-link, .enlace-pagina {
         display: block;
         width: 100%;
         padding: 14px 20px;
@@ -870,7 +887,8 @@ body {
     }
 
     .nav-link:hover,
-    .nav-link.active {
+    .nav-link.active,
+    .enlace-pagina:hover {
         background: rgba(255,255,255,0.12);
     }
 
@@ -926,13 +944,13 @@ body {
     }
 
     .portada-item img {
-    width: 100%;
-    min-height: auto;
-    height: 240px;
-    max-height: 240px;
-    object-fit: cover;
-    border-radius: 16px;
-}
+        width: 100%;
+        min-height: auto;
+        height: 240px;
+        max-height: 240px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
 
     .portada-participantes {
         padding: 22px;
@@ -1050,8 +1068,8 @@ body {
     }
 
     .portada-item img {
-    height: 200px;
-}
+        height: 200px;
+    }
 
     .flip-book {
         height: 300px;
@@ -1061,7 +1079,7 @@ body {
         top: 50px;
     }
 
-    .nav-link {
+    .nav-link, .enlace-pagina {
         font-size: 0.95rem;
         padding: 12px 16px;
     }
