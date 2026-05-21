@@ -10,6 +10,43 @@
     --font-text: 'Raleway', sans-serif;
 }
 
+.btn-acceso-directo {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(97, 14, 5, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-acceso-directo:hover {
+    background-color: #7d2117;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(97, 14, 5, 0.3);
+}
+
+/* Envoltura de la imagen del equipo para que actúe como enlace */
+.enlace-foto-equipo {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.enlace-foto-equipo img {
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+/* Efecto hover al pasar el cursor sobre la foto del equipo */
+.enlace-foto-equipo:hover img {
+    transform: scale(1.05);
+    filter: brightness(90%);
+}
+
 /* Reset y estilos base */
 * {
     margin: 0;
