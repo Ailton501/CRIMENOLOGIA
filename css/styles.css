@@ -10,6 +10,31 @@
     --font-text: 'Raleway', sans-serif;
 }
 
+/* Optimizaciones extra para la sección de Videos y Trípticos */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+/* Ajustes de Media Queries para que los menús no se amontonen con las nuevas secciones */
+@media (max-width: 1100px) {
+    .nav ul {
+        gap: 5px;
+    }
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+}
+
 .btn-acceso-directo {
     display: inline-block;
     margin-top: 15px;
